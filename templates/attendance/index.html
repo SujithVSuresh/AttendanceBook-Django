@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+        {% for class in classes %}
+        <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <a href="{% url 'attendance:attendance_creation' class.id %}">{{ class.name }}</a>
+            </div>
+        </div>
+    </div>
+        {% endfor %}
+</div>
+
+{% endblock %}

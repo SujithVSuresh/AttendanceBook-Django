@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<ul>
+    {% for attendance in latest %}
+        <a href="{% url 'attendance:attendance_detail' attendance.pk %}"><li>{{ attendance.date|date:"F j, Y" }} - {{attendance.class_name}}</li></a>
+    {% endfor %}
+</ul>
+{% endblock %}

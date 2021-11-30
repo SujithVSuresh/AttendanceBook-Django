@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<h2>{{attendance.class_name}}</h2>
+<h1>Present</h1>
+{% for student_name in attendance.is_present.all %}
+<h2>{{student_name.name}}</h2>
+{% endfor %}
+<h1>Absent</h1>
+{% for student_name in attendance.is_absent.all %}
+<h2>{{student_name.name}}</h2>
+{% endfor %}
+
+
+{% endblock %}
